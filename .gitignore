@@ -1,0 +1,15 @@
+# secrets
+.env
+access_token.json
+
+# python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# logs
+logs/*.log
+
+# os
+.DS_Store
