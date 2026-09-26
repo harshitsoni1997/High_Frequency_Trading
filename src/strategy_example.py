@@ -6,7 +6,7 @@ This is a template to adapt, not a strategy to run as-is — plug in your own
 signal, sizing, and risk logic before pointing it at a real account.
 """
 from src.kite_client import get_kite
-from src.market_data import get_ltp
+from src.market_data import get_ltp_free
 from src.orders import place_market_order
 
 
@@ -27,7 +27,7 @@ def run_dip_buy_strategy(
     kite = get_kite()
     instrument = f"{exchange}:{tradingsymbol}"
 
-    ltp_data = get_ltp(kite, [instrument])
+    ltp_data = get_ltp_free(kite, [instrument])
     current_price = ltp_data[instrument]["last_price"]
 
     dip_pct = (reference_price - current_price) / reference_price * 100
